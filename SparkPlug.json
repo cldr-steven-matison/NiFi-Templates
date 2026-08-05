@@ -1,0 +1,1171 @@
+{
+  "flowContents": {
+    "identifier": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+    "instanceIdentifier": "ce82b023-019f-1000-0000-000018f11e53",
+    "name": "SparkPlug",
+    "comments": "",
+    "position": {
+      "x": 2112.0,
+      "y": 736.0
+    },
+    "processGroups": [],
+    "remoteProcessGroups": [],
+    "processors": [
+      {
+        "identifier": "bb18776f-43b7-3c78-ac1d-ef1cb25aa956",
+        "instanceIdentifier": "ce83c79f-019f-1000-ffff-ffffc72a1d30",
+        "name": "PublishKafka-XiaoTelemetry",
+        "comments": "",
+        "position": {
+          "x": 240.0,
+          "y": -96.0
+        },
+        "type": "org.apache.nifi.processors.kafka.pubsub.PublishKafka_2_6",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-kafka-2-6-nar",
+          "version": "2.6.0.4.3.4.0-234"
+        },
+        "properties": {
+          "compression.type": "none",
+          "attribute-name-regex": null,
+          "bootstrap.servers": "my-cluster-kafka-bootstrap.cld-streaming.svc:9092",
+          "AWS Assume Role ARN": null,
+          "sasl.kerberos.service.name": null,
+          "AWS Role Source": "DEFAULT_PROFILE",
+          "kafka-key": "${device_id}",
+          "partition": null,
+          "sasl.mechanism": "GSSAPI",
+          "max.block.ms": "5 sec",
+          "message-header-encoding": "UTF-8",
+          "kerberos-user-service": null,
+          "message-demarcator": null,
+          "transactional-id-prefix": null,
+          "ack.wait.time": "5 secs",
+          "sasl.username": null,
+          "use-transactions": "false",
+          "acks": "all",
+          "aws.profile.name": null,
+          "security.protocol": "PLAINTEXT",
+          "max.request.size": "1 MB",
+          "SSL Context Service": null,
+          "sasl.token.auth": "false",
+          "Failure Strategy": "Route to Failure",
+          "AWS Assume Role Session Name": null,
+          "partitioner.class": "org.apache.kafka.clients.producer.internals.DefaultPartitioner",
+          "topic": "xiao_telemetry",
+          "key-attribute-encoding": "utf-8"
+        },
+        "propertyDescriptors": {
+          "compression.type": {
+            "name": "compression.type",
+            "displayName": "Compression Type",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "attribute-name-regex": {
+            "name": "attribute-name-regex",
+            "displayName": "Attributes to Send as Headers (Regex)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "bootstrap.servers": {
+            "name": "bootstrap.servers",
+            "displayName": "Bootstrap Servers",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Assume Role ARN": {
+            "name": "AWS Assume Role ARN",
+            "displayName": "AWS Assume Role ARN",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.kerberos.service.name": {
+            "name": "sasl.kerberos.service.name",
+            "displayName": "Kerberos Service Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Role Source": {
+            "name": "AWS Role Source",
+            "displayName": "AWS Role Source",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "kafka-key": {
+            "name": "kafka-key",
+            "displayName": "Kafka Key",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partition": {
+            "name": "partition",
+            "displayName": "Partition",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.mechanism": {
+            "name": "sasl.mechanism",
+            "displayName": "SASL Mechanism",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.block.ms": {
+            "name": "max.block.ms",
+            "displayName": "Max Metadata Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-header-encoding": {
+            "name": "message-header-encoding",
+            "displayName": "Message Header Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "kerberos-user-service": {
+            "name": "kerberos-user-service",
+            "displayName": "Kerberos User Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-demarcator": {
+            "name": "message-demarcator",
+            "displayName": "Message Demarcator",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "transactional-id-prefix": {
+            "name": "transactional-id-prefix",
+            "displayName": "Transactional Id Prefix",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "ack.wait.time": {
+            "name": "ack.wait.time",
+            "displayName": "Acknowledgment Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.username": {
+            "name": "sasl.username",
+            "displayName": "SASL Username",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "use-transactions": {
+            "name": "use-transactions",
+            "displayName": "Use Transactions",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "acks": {
+            "name": "acks",
+            "displayName": "Delivery Guarantee",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "aws.profile.name": {
+            "name": "aws.profile.name",
+            "displayName": "AWS Profile Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "security.protocol": {
+            "name": "security.protocol",
+            "displayName": "Security Protocol",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.request.size": {
+            "name": "max.request.size",
+            "displayName": "Max Request Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.token.auth": {
+            "name": "sasl.token.auth",
+            "displayName": "Token Authentication",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Failure Strategy": {
+            "name": "Failure Strategy",
+            "displayName": "Failure Strategy",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Assume Role Session Name": {
+            "name": "AWS Assume Role Session Name",
+            "displayName": "AWS Assume Role Session Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partitioner.class": {
+            "name": "partitioner.class",
+            "displayName": "Partitioner class",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "topic": {
+            "name": "topic",
+            "displayName": "Topic Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.password": {
+            "name": "sasl.password",
+            "displayName": "SASL Password",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "key-attribute-encoding": {
+            "name": "key-attribute-encoding",
+            "displayName": "Key Attribute Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [
+          "success",
+          "failure"
+        ],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "6125b174-aea4-314f-b261-d90d3555e67a",
+        "instanceIdentifier": "ce83c7da-019f-1000-ffff-ffff9c1f31b0",
+        "name": "PublishKafka-SparkplugTelemetry",
+        "comments": "",
+        "position": {
+          "x": -392.0,
+          "y": -88.0
+        },
+        "type": "org.apache.nifi.processors.kafka.pubsub.PublishKafka_2_6",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-kafka-2-6-nar",
+          "version": "2.6.0.4.3.4.0-234"
+        },
+        "properties": {
+          "compression.type": "none",
+          "attribute-name-regex": null,
+          "bootstrap.servers": "my-cluster-kafka-bootstrap.cld-streaming.svc:9092",
+          "AWS Assume Role ARN": null,
+          "sasl.kerberos.service.name": null,
+          "AWS Role Source": "DEFAULT_PROFILE",
+          "kafka-key": "${device_id}",
+          "partition": null,
+          "sasl.mechanism": "GSSAPI",
+          "max.block.ms": "5 sec",
+          "message-header-encoding": "UTF-8",
+          "kerberos-user-service": null,
+          "message-demarcator": null,
+          "transactional-id-prefix": null,
+          "ack.wait.time": "5 secs",
+          "sasl.username": null,
+          "use-transactions": "false",
+          "acks": "all",
+          "aws.profile.name": null,
+          "security.protocol": "PLAINTEXT",
+          "max.request.size": "1 MB",
+          "SSL Context Service": null,
+          "sasl.token.auth": "false",
+          "Failure Strategy": "Route to Failure",
+          "AWS Assume Role Session Name": null,
+          "partitioner.class": "org.apache.kafka.clients.producer.internals.DefaultPartitioner",
+          "topic": "sparkplug_telemetry",
+          "key-attribute-encoding": "utf-8"
+        },
+        "propertyDescriptors": {
+          "compression.type": {
+            "name": "compression.type",
+            "displayName": "Compression Type",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "attribute-name-regex": {
+            "name": "attribute-name-regex",
+            "displayName": "Attributes to Send as Headers (Regex)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "bootstrap.servers": {
+            "name": "bootstrap.servers",
+            "displayName": "Bootstrap Servers",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Assume Role ARN": {
+            "name": "AWS Assume Role ARN",
+            "displayName": "AWS Assume Role ARN",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.kerberos.service.name": {
+            "name": "sasl.kerberos.service.name",
+            "displayName": "Kerberos Service Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Role Source": {
+            "name": "AWS Role Source",
+            "displayName": "AWS Role Source",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "kafka-key": {
+            "name": "kafka-key",
+            "displayName": "Kafka Key",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partition": {
+            "name": "partition",
+            "displayName": "Partition",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.mechanism": {
+            "name": "sasl.mechanism",
+            "displayName": "SASL Mechanism",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.block.ms": {
+            "name": "max.block.ms",
+            "displayName": "Max Metadata Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-header-encoding": {
+            "name": "message-header-encoding",
+            "displayName": "Message Header Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "kerberos-user-service": {
+            "name": "kerberos-user-service",
+            "displayName": "Kerberos User Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-demarcator": {
+            "name": "message-demarcator",
+            "displayName": "Message Demarcator",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "transactional-id-prefix": {
+            "name": "transactional-id-prefix",
+            "displayName": "Transactional Id Prefix",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "ack.wait.time": {
+            "name": "ack.wait.time",
+            "displayName": "Acknowledgment Wait Time",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.username": {
+            "name": "sasl.username",
+            "displayName": "SASL Username",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "use-transactions": {
+            "name": "use-transactions",
+            "displayName": "Use Transactions",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "acks": {
+            "name": "acks",
+            "displayName": "Delivery Guarantee",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "aws.profile.name": {
+            "name": "aws.profile.name",
+            "displayName": "AWS Profile Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "security.protocol": {
+            "name": "security.protocol",
+            "displayName": "Security Protocol",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "max.request.size": {
+            "name": "max.request.size",
+            "displayName": "Max Request Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.token.auth": {
+            "name": "sasl.token.auth",
+            "displayName": "Token Authentication",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Failure Strategy": {
+            "name": "Failure Strategy",
+            "displayName": "Failure Strategy",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "AWS Assume Role Session Name": {
+            "name": "AWS Assume Role Session Name",
+            "displayName": "AWS Assume Role Session Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "partitioner.class": {
+            "name": "partitioner.class",
+            "displayName": "Partitioner class",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "topic": {
+            "name": "topic",
+            "displayName": "Topic Name",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "sasl.password": {
+            "name": "sasl.password",
+            "displayName": "SASL Password",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "key-attribute-encoding": {
+            "name": "key-attribute-encoding",
+            "displayName": "Key Attribute Encoding",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [
+          "success",
+          "failure"
+        ],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "9a10c8be-679c-382a-bea8-73a81d0ef55a",
+        "instanceIdentifier": "25802db8-4dfc-32fe-b9fa-d30b1e360049",
+        "name": "ConsumeMQTT",
+        "comments": "",
+        "position": {
+          "x": 240.0,
+          "y": -296.0
+        },
+        "type": "org.apache.nifi.processors.mqtt.ConsumeMQTT",
+        "bundle": {
+          "group": "org.apache.nifi",
+          "artifact": "nifi-mqtt-nar",
+          "version": "2.6.0.4.3.4.0-234"
+        },
+        "properties": {
+          "Max Queue Size": "10000",
+          "Client ID": "nifi-test-consumer",
+          "Last Will QoS Level": "0",
+          "Connection Timeout (seconds)": "30",
+          "record-writer": null,
+          "Broker URI": "tcp://mosquitto.mqtt.svc.cluster.local:1883",
+          "add-attributes-as-fields": "true",
+          "SSL Context Service": null,
+          "Username": null,
+          "Session state": "true",
+          "Session Expiry Interval": "24 hrs",
+          "Quality of Service(QoS)": "0",
+          "Last Will Message": null,
+          "Last Will Topic": null,
+          "Topic Filter": "test/sensor/data",
+          "record-reader": null,
+          "Group ID": null,
+          "message-demarcator": null,
+          "MQTT Specification Version": "0",
+          "Keep Alive Interval (seconds)": "60",
+          "Last Will Retain": "false"
+        },
+        "propertyDescriptors": {
+          "Max Queue Size": {
+            "name": "Max Queue Size",
+            "displayName": "Max Queue Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Client ID": {
+            "name": "Client ID",
+            "displayName": "Client ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Last Will QoS Level": {
+            "name": "Last Will QoS Level",
+            "displayName": "Last Will QoS Level",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Connection Timeout (seconds)": {
+            "name": "Connection Timeout (seconds)",
+            "displayName": "Connection Timeout (seconds)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "record-writer": {
+            "name": "record-writer",
+            "displayName": "Record Writer",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Broker URI": {
+            "name": "Broker URI",
+            "displayName": "Broker URI",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "add-attributes-as-fields": {
+            "name": "add-attributes-as-fields",
+            "displayName": "Add attributes as fields",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Username": {
+            "name": "Username",
+            "displayName": "Username",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Session state": {
+            "name": "Session state",
+            "displayName": "Session state",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Session Expiry Interval": {
+            "name": "Session Expiry Interval",
+            "displayName": "Session Expiry Interval",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Quality of Service(QoS)": {
+            "name": "Quality of Service(QoS)",
+            "displayName": "Quality of Service (QoS)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Last Will Message": {
+            "name": "Last Will Message",
+            "displayName": "Last Will Message",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Last Will Topic": {
+            "name": "Last Will Topic",
+            "displayName": "Last Will Topic",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Topic Filter": {
+            "name": "Topic Filter",
+            "displayName": "Topic Filter",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "record-reader": {
+            "name": "record-reader",
+            "displayName": "Record Reader",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Group ID": {
+            "name": "Group ID",
+            "displayName": "Group ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-demarcator": {
+            "name": "message-demarcator",
+            "displayName": "Message Demarcator",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "MQTT Specification Version": {
+            "name": "MQTT Specification Version",
+            "displayName": "MQTT Specification Version",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Keep Alive Interval (seconds)": {
+            "name": "Keep Alive Interval (seconds)",
+            "displayName": "Keep Alive Interval (seconds)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Password": {
+            "name": "Password",
+            "displayName": "Password",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          },
+          "Last Will Retain": {
+            "name": "Last Will Retain",
+            "displayName": "Last Will Retain",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "845f74b6-8018-3df4-a9a5-18347d60f778",
+        "instanceIdentifier": "fc7c0b30-b411-399a-96b1-313f087f6c44",
+        "name": "ConsumeMQTTIIoT",
+        "comments": "",
+        "position": {
+          "x": -392.0,
+          "y": -288.0
+        },
+        "type": "com.cloudera.nifi.processor.iiot.mqtt.ConsumeMQTTIIoT",
+        "bundle": {
+          "group": "com.cloudera",
+          "artifact": "nifi-cdf-iiot-mqtt-nar",
+          "version": "2.6.0.4.3.4.0-234"
+        },
+        "properties": {
+          "Max Queue Size": "10000",
+          "Client ID": "nifi-test-consumer-2",
+          "Connection Timeout (seconds)": "30",
+          "record-writer": null,
+          "Send Rebirth Requests": "false",
+          "Node IDs": null,
+          "Primary Host Application": "false",
+          "Host Application ID": "2c2ea90b-3799-40fd-96a2-9fcf03b6d848",
+          "Broker URI": "tcp://mosquitto.mqtt.svc.cluster.local:1883",
+          "add-attributes-as-fields": "true",
+          "SSL Context Service": null,
+          "Username": null,
+          "Session state": "true",
+          "Session Expiry Interval": "24 hrs",
+          "Quality of Service(QoS)": "0",
+          "Topic Filter": "spBv1.0/#",
+          "record-reader": null,
+          "Group ID": null,
+          "message-demarcator": null,
+          "MQTT Specification Version": "0",
+          "Keep Alive Interval (seconds)": "60"
+        },
+        "propertyDescriptors": {
+          "Max Queue Size": {
+            "name": "Max Queue Size",
+            "displayName": "Max Queue Size",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Client ID": {
+            "name": "Client ID",
+            "displayName": "Client ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Connection Timeout (seconds)": {
+            "name": "Connection Timeout (seconds)",
+            "displayName": "Connection Timeout (seconds)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "record-writer": {
+            "name": "record-writer",
+            "displayName": "Record Writer",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Send Rebirth Requests": {
+            "name": "Send Rebirth Requests",
+            "displayName": "Send Rebirth Requests",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Node IDs": {
+            "name": "Node IDs",
+            "displayName": "Node IDs",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Primary Host Application": {
+            "name": "Primary Host Application",
+            "displayName": "Primary Host Application",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Host Application ID": {
+            "name": "Host Application ID",
+            "displayName": "Host Application ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Broker URI": {
+            "name": "Broker URI",
+            "displayName": "Broker URI",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "add-attributes-as-fields": {
+            "name": "add-attributes-as-fields",
+            "displayName": "Add attributes as fields",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "SSL Context Service": {
+            "name": "SSL Context Service",
+            "displayName": "SSL Context Service",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Username": {
+            "name": "Username",
+            "displayName": "Username",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Session state": {
+            "name": "Session state",
+            "displayName": "Session state",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Session Expiry Interval": {
+            "name": "Session Expiry Interval",
+            "displayName": "Session Expiry Interval",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Quality of Service(QoS)": {
+            "name": "Quality of Service(QoS)",
+            "displayName": "Quality of Service (QoS)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Topic Filter": {
+            "name": "Topic Filter",
+            "displayName": "Topic Filter",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "record-reader": {
+            "name": "record-reader",
+            "displayName": "Record Reader",
+            "identifiesControllerService": true,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Group ID": {
+            "name": "Group ID",
+            "displayName": "Group ID",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "message-demarcator": {
+            "name": "message-demarcator",
+            "displayName": "Message Demarcator",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "MQTT Specification Version": {
+            "name": "MQTT Specification Version",
+            "displayName": "MQTT Specification Version",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Keep Alive Interval (seconds)": {
+            "name": "Keep Alive Interval (seconds)",
+            "displayName": "Keep Alive Interval (seconds)",
+            "identifiesControllerService": false,
+            "sensitive": false,
+            "dynamic": false
+          },
+          "Password": {
+            "name": "Password",
+            "displayName": "Password",
+            "identifiesControllerService": false,
+            "sensitive": true,
+            "dynamic": false
+          }
+        },
+        "style": {},
+        "schedulingPeriod": "0 sec",
+        "schedulingStrategy": "TIMER_DRIVEN",
+        "executionNode": "ALL",
+        "penaltyDuration": "30 sec",
+        "yieldDuration": "1 sec",
+        "bulletinLevel": "WARN",
+        "runDurationMillis": 0,
+        "concurrentlySchedulableTaskCount": 1,
+        "autoTerminatedRelationships": [],
+        "scheduledState": "ENABLED",
+        "retryCount": 10,
+        "retriedRelationships": [],
+        "backoffMechanism": "PENALIZE_FLOWFILE",
+        "maxBackoffPeriod": "10 mins",
+        "componentType": "PROCESSOR",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      }
+    ],
+    "inputPorts": [],
+    "outputPorts": [
+      {
+        "identifier": "ffeece18-9860-3896-8e84-10472fa2d446",
+        "instanceIdentifier": "7509d970-bb47-3257-9668-747fdd114c0c",
+        "name": "EOL",
+        "position": {
+          "x": -48.0,
+          "y": 104.0
+        },
+        "type": "OUTPUT_PORT",
+        "concurrentlySchedulableTaskCount": 1,
+        "scheduledState": "ENABLED",
+        "allowRemoteAccess": false,
+        "portFunction": "STANDARD",
+        "componentType": "OUTPUT_PORT",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      }
+    ],
+    "connections": [
+      {
+        "identifier": "510711fa-4022-3881-a637-c601e297bff1",
+        "instanceIdentifier": "8012cf6a-b5ff-3da8-b297-f5205ee8a5ce",
+        "name": "",
+        "source": {
+          "id": "845f74b6-8018-3df4-a9a5-18347d60f778",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "ConsumeMQTTIIoT",
+          "comments": "",
+          "instanceIdentifier": "fc7c0b30-b411-399a-96b1-313f087f6c44"
+        },
+        "destination": {
+          "id": "ffeece18-9860-3896-8e84-10472fa2d446",
+          "type": "OUTPUT_PORT",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "EOL",
+          "instanceIdentifier": "7509d970-bb47-3257-9668-747fdd114c0c"
+        },
+        "labelIndex": 0,
+        "zIndex": 4,
+        "selectedRelationships": [
+          "parse.failure"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [
+          {
+            "x": -312.0,
+            "y": -32.0
+          }
+        ],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "partitioningAttribute": "",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "0f18c6fa-4523-3794-bb21-f223eee16177",
+        "instanceIdentifier": "9ff75d83-1629-38e2-9530-9cf481dd596d",
+        "name": "",
+        "source": {
+          "id": "9a10c8be-679c-382a-bea8-73a81d0ef55a",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "ConsumeMQTT",
+          "comments": "",
+          "instanceIdentifier": "25802db8-4dfc-32fe-b9fa-d30b1e360049"
+        },
+        "destination": {
+          "id": "ffeece18-9860-3896-8e84-10472fa2d446",
+          "type": "OUTPUT_PORT",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "EOL",
+          "instanceIdentifier": "7509d970-bb47-3257-9668-747fdd114c0c"
+        },
+        "labelIndex": 0,
+        "zIndex": 2,
+        "selectedRelationships": [
+          "parse.failure"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [
+          {
+            "x": 488.0,
+            "y": -32.0
+          }
+        ],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "partitioningAttribute": "",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "7cd7b0ff-a417-327b-8b2c-918b75399f09",
+        "instanceIdentifier": "ce83c81d-019f-1000-ffff-fffff1c1d6da",
+        "name": "ConsumeMQTTIIoT/Message/PublishKafka-SparkplugTelemetry",
+        "source": {
+          "id": "845f74b6-8018-3df4-a9a5-18347d60f778",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "ConsumeMQTTIIoT",
+          "comments": "",
+          "instanceIdentifier": "fc7c0b30-b411-399a-96b1-313f087f6c44"
+        },
+        "destination": {
+          "id": "6125b174-aea4-314f-b261-d90d3555e67a",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "PublishKafka-SparkplugTelemetry",
+          "comments": "",
+          "instanceIdentifier": "ce83c7da-019f-1000-ffff-ffff9c1f31b0"
+        },
+        "labelIndex": 1,
+        "zIndex": 0,
+        "selectedRelationships": [
+          "Message"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      },
+      {
+        "identifier": "14d22de2-2062-37a2-bf46-e2cf3c4107d5",
+        "instanceIdentifier": "ce83c7f4-019f-1000-0000-0000713895c4",
+        "name": "ConsumeMQTT/Message/PublishKafka-XiaoTelemetry",
+        "source": {
+          "id": "9a10c8be-679c-382a-bea8-73a81d0ef55a",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "ConsumeMQTT",
+          "comments": "",
+          "instanceIdentifier": "25802db8-4dfc-32fe-b9fa-d30b1e360049"
+        },
+        "destination": {
+          "id": "bb18776f-43b7-3c78-ac1d-ef1cb25aa956",
+          "type": "PROCESSOR",
+          "groupId": "8df80367-0200-31d4-86d7-13c2d4c804d1",
+          "name": "PublishKafka-XiaoTelemetry",
+          "comments": "",
+          "instanceIdentifier": "ce83c79f-019f-1000-ffff-ffffc72a1d30"
+        },
+        "labelIndex": 1,
+        "zIndex": 0,
+        "selectedRelationships": [
+          "Message"
+        ],
+        "backPressureObjectThreshold": 10000,
+        "backPressureDataSizeThreshold": "1 GB",
+        "flowFileExpiration": "0 sec",
+        "prioritizers": [],
+        "bends": [],
+        "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE",
+        "loadBalanceCompression": "DO_NOT_COMPRESS",
+        "componentType": "CONNECTION",
+        "groupIdentifier": "8df80367-0200-31d4-86d7-13c2d4c804d1"
+      }
+    ],
+    "labels": [],
+    "funnels": [],
+    "controllerServices": [],
+    "defaultFlowFileExpiration": "0 sec",
+    "defaultBackPressureObjectThreshold": 10000,
+    "defaultBackPressureDataSizeThreshold": "1 GB",
+    "scheduledState": "ENABLED",
+    "executionEngine": "INHERITED",
+    "maxConcurrentTasks": 1,
+    "statelessFlowTimeout": "1 min",
+    "flowFileConcurrency": "UNBOUNDED",
+    "flowFileOutboundPolicy": "STREAM_WHEN_AVAILABLE",
+    "componentType": "PROCESS_GROUP"
+  },
+  "externalControllerServices": {},
+  "parameterContexts": {},
+  "flowEncodingVersion": "1.0",
+  "parameterProviders": {},
+  "latest": false
+}
